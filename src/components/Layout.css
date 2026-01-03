@@ -1,0 +1,76 @@
+.layout-container {
+  display: flex;
+  height: 100vh; /* Ocupa toda la altura */
+  overflow: hidden;
+}
+
+/* --- Sidebar (Izquierda) --- */
+.sidebar {
+  width: 250px;
+  background-color: #2c3e50; /* Azul oscuro elegante */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  transition: width 0.3s;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #34495e;
+  padding-bottom: 1rem;
+}
+
+.sidebar nav {
+  flex: 1; /* Empuja el botón de salir hacia abajo */
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  color: #bdc3c7;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-bottom: 5px;
+  transition: all 0.2s;
+}
+
+.nav-link:hover, .nav-link.active {
+  background-color: #34495e;
+  color: white;
+  transform: translateX(5px);
+}
+
+.nav-link svg {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.btn-logout {
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.btn-logout:hover {
+  background-color: #e74c3c;
+}
+
+/* --- Contenido Principal (Derecha) --- */
+.main-content {
+  flex: 1; /* Toma el espacio restante */
+  background-color: #ecf0f1;
+  padding: 2rem;
+  overflow-y: auto; /* Scroll solo aquí */
+}
