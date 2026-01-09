@@ -1,8 +1,9 @@
 import axios from 'axios';
 
 // Creamos una instancia de Axios con la URL base del backend
+// Colocamos que use la variable de entorno y sino que use el localhost
 const api = axios.create({
-  baseURL: 'http://localhost:3000/api', // Asegúrate de que este puerto coincida con backend
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:3000/api',
 });
 
 // Interceptor: Antes de cada petición, inyectamos el token si existe
@@ -18,5 +19,6 @@ api.interceptors.request.use(
     return Promise.reject(error);
   }
 );
+
 
 export default api;
